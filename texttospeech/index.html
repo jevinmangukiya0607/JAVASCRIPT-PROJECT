@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Talker</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="heading">
+                <div class="icon">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <div class="para">
+                    <h2>TALKER</h2>
+                    <h4>Text To Speech Converter</h4>
+                </div>
+            </div>
+            <div class="input">
+                <div class="inputgroup">
+                    <input type="text" class="texttospeech" placeholder="Enter Text">
+                </div>
+                <!-- <select name="lan" class="lan">
+                    <option value="en-US">English</option>
+                    <option value="hi-IN">Hindi</option>
+                    <option value="gu-IN">Gujarati</option>
+                </select> -->
+                <div class="inputgroup">
+                    <button type="button" onclick="speak();">SPEAK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+            const speak = () => {
+                  const message = document.querySelector(".texttospeech").value;
+                //   const lan = document.querySelector(".lan").value;
+                  var speech = new SpeechSynthesisUtterance();
+                //   speech.lang = "${lan}";
+                speech.lang = "en-US";
+                  speech.text = message;
+                  speech.volume = 1;
+                  speech.rate = 1;
+                  speech.pitch = 1;
+                  window.speechSynthesis.speak(speech);
+            };
+    </script>
+</body>
+
+</html>

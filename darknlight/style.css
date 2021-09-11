@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body[data-theme="light"]{
+    --color-1 : #ebf5fc; 
+    --color-2 :  linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+
+body[data-theme="dark"]{
+    --color-1 :  linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    --color-2 : #ebf5fc; 
+}
+
+body{
+    background: var(--color-1);
+    
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#container .card{
+    position: relative;
+    width: 450px;
+    height: 550px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.5),inset 5px 5px 5px rgba(0, 0, 0, 0.25),inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+    background : var(--color-1);
+    border-radius: 15px;
+    margin: 30px;
+}
+
+#container .card .box{
+    position:absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: var(--color-2); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+}
+
+p{
+    font-size: 1.2em;
+    text-decoration: none;
+    padding-left: 15px ;
+    color:var(--color-1);
+    pointer-events: none;
+}
+
+.theme-switcher{
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    transition: 0.5s ease;
+}
+
+label{
+    display: block;
+    text-indent: -9999px;
+    height: 30px;
+    width: 60px;
+    background:var(--color-2);
+    border-radius: 50px;
+    transition: 0.5s ease;
+}
+
+label::after{
+    position: absolute;
+    content:" ";
+    height: 20px;
+    width: 20px;
+    top:50%;
+    left:5px;
+    border-radius: 50%;
+    background: var(--color-1);
+    transition: 0.5s ease;
+}
+
+input:checked + label{
+    background: var(--color-1);
+    border: 2px solid var(--color-2);
+}
+
+input:checked + label::after{
+    background: var(--color-2);
+    left : calc(100% - 25px);
+}

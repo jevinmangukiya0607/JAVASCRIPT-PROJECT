@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-166000335-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-166000335-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download YouTube Video Thumbnail | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .download-btn-cn {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            z-index: 99999;
+        }
+
+        .download-btn-cn a {
+            background: none;
+            padding: 13px 22px;
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            border: 2px solid #fff;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn-cn a:hover {
+            color: #7d2ae8;
+            background: #fff;
+        }
+
+        @media screen and (max-width: 600px) {
+            .download-btn-cn {
+                left: 20px;
+            }
+
+            .download-btn-cn a {
+                font-size: 13px;
+                padding: 9px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body cz-shortcut-listen="true">
+    <div class="download-btn-cn">
+        <a href="https://www.codingnepalweb.com/download-youtube-video-thumbnail" target="_blank">Download Code
+            Files</a>
+    </div>
+    <form action="/demos/download-youtube-thumbnail/index.php" method="POST">
+        <header>Download Thumbnail</header>
+        <div class="url-input">
+            <span class="title">Paste video url:</span>
+            <div class="field">
+                <input type="text" placeholder="https://www.youtube.com/watch?v=lqwdD2ivIbM" required="">
+                <input class="hidden-input" type="hidden" name="imgurl"
+                    value="">
+                <span class="bottom-line"></span>
+            </div>
+        </div>
+        <div class="preview-area active">
+            <img class="thumbnail" src="" alt="">
+            <i class="icon fas fa-cloud-download-alt"></i>
+            <span>Paste video url to see preview</span>
+        </div>
+        <button class="download-btn" type="submit" name="button" style="pointer-events: auto;">Download
+            Thumbnail</button>
+    </form>
+    <script>
+        const urlField = document.querySelector(".field input"),
+            previewArea = document.querySelector(".preview-area"),
+            imgTag = previewArea.querySelector(".thumbnail"),
+            hiddenInput = document.querySelector(".hidden-input"),
+            button = document.querySelector(".download-btn");
+
+        urlField.onkeyup = () => {
+            let imgUrl = urlField.value;
+            previewArea.classList.add("active");
+            button.style.pointerEvents = "auto";
+            if (imgUrl.indexOf("https://www.youtube.com/watch?v=") != -1) {
+                let vidId = imgUrl.split('v=')[1].substring(0, 11);
+                let ytImgUrl = `https://img.youtube.com/vi/${vidId}/maxresdefault.jpg`;
+                imgTag.src = ytImgUrl;
+            } else if (imgUrl.indexOf("https://youtu.be/") != -1) {
+                let vidId = imgUrl.split('be/')[1].substring(0, 11);
+                let ytImgUrl = `https://img.youtube.com/vi/${vidId}/maxresdefault.jpg`;
+                imgTag.src = ytImgUrl;
+            } else if (imgUrl.match(/\.(jpe?g|png|gif|bmp|webp)$/i)) {
+                imgTag.src = imgUrl;
+            } else {
+                imgTag.src = "";
+                button.style.pointerEvents = "none";
+                previewArea.classList.remove("active");
+            }
+            hiddenInput.value = imgTag.src;
+        }
+    </script>
+
+
+</body>
+
+</html>

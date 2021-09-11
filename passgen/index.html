@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>PassGen</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="box">
+            <div id="output-area">
+                <input type="text" class="output">
+                <button class="copy">
+                    <i class="far fa-copy" onclick="copyClip()"></i>
+                </button>
+                <button class="random">
+                    <i class="fas fa-random" onclick="genPassword()"></i>
+                </button>
+            </div>
+            <div id="input">
+                <input type="range" id="length" max="20" min="8" value="10" oninput="genPassword()">
+                <h3 class="numbervalue"></h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

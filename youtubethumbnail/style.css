@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Kreon&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #ebf5fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin-top: 100px;
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+    inset 5px 5px 5px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+
+}
+
+form{
+    position:absolute;
+    width:460px;
+    height:460px;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    font-size: 1.2rem;
+    background:  linear-gradient(to right, #0f2027, #203a43, #2c5364); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    color: #ebf5fc;
+    padding:50px;
+}
+
+form .head{
+    text-align: center;
+    font-size: 2rem;
+    text-transform:uppercase;
+    margin-top: -25px;
+    margin-bottom: 30px;
+    background : linear-gradient(to top, #2980b9, #6dd5fa, #ffffff);
+    -webkit-background-clip : text;
+    -webkit-text-fill-color: transparent;
+}
+
+form .url-input input{
+    width: 100%;
+    height: 25px;
+    margin: 5px auto;
+    border: none;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25),
+                 inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+                 inset 5px 5px 5px rgba(0, 0, 0, 0.25),
+                 inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 20px;
+    outline: 0;
+}
+
+.preview-area .thumbnail{
+    height:90%;
+    border: none;
+    display: none;
+    border-radius: 20px; 
+}
+
+.preview-area.active .thumbnail{
+    display: block;
+}
+
+.preview-area.active i,
+.preview-area.active span{
+    display: none;
+}
+
+form .preview-area{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
+form .preview-area i{
+    font-size: 75px;
+    margin-bottom: 20px;
+}
+
+form .preview-area span{
+    font-size: 1.2rem;
+}
+
+.download-btn{
+    width: 100%;
+    height: 30px;
+    border: none;
+    font-weight: 550;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+    background : linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s ;
+}
+
+.download-btn:hover{
+    transform: scale(.94);
+}
+
+.download-btn h2{
+background : linear-gradient(to left, #0f2027, #203a43, #2c5364);
+-webkit-background-clip : text;
+-webkit-text-fill-color: transparent;
+}

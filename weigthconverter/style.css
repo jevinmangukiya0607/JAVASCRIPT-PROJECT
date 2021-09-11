@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #ebf5fc;
+}
+
+.header{
+    position: relative;
+    top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h2{
+    font-size: 3.2em; 
+}
+
+.header form{
+    margin-top: 10px;
+    margin-bottom: 0px;;
+}
+
+.header form input{
+    position:relative;
+    height: 40px;
+     width: 500px;
+     border: 0px;
+     border-radius: 20px;
+     padding-left: 20px;
+     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25),
+                 inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+                 inset 5px 5px 5px rgba(0, 0, 0, 0.25),
+                 inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+    outline: 0px;
+    font-size: 1.5em;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    max-width: 1500px;
+    flex-wrap: wrap;
+}
+
+#container .card{
+    position: relative;
+    width: 450px;
+    height: 150px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.5),inset 5px 5px 5px rgba(0, 0, 0, 0.25),inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+    background : #ebf5fc;
+    border-radius: 15px;
+    margin: 30px;
+}
+
+#container .card .box{
+    position:absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background:  linear-gradient(to right, #0f2027, #203a43, #2c5364); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#container .card .box h3{
+    padding-left: 25px;
+    font-size: 2.5em;
+    color: #777;
+}
+
+#container .card:hover .box h3{
+    color: white;
+}
+
+
+#container .card .content {
+    position: relative;
+    width: 150px;
+    top: 0px;
+    left: 10px;
+    background: #ebf5fc;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+    inset 5px 5px 5px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow-x: scroll;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+a{
+    font-size: 2em;
+    text-decoration: none;
+    padding-left: 15px ;
+    color: #777;
+    pointer-events: none;
+}
+
+
+/* link
+https://talkerbyzid.netlify.app/ */
+

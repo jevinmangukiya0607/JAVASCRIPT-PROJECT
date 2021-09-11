@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dight</title>
+</head>
+<body  data-theme="light">
+    <div id="container">
+        <div class="card">
+            <div class="box">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, iure autem. Quibusdam corrupti consectetur, aliquid, quidem quaerat temporibus reiciendis laudantium pariatur quos dolor fugiat tempora aliquam libero provident dignissimos nesciunt, atque quo iusto. In nobis cum sint pariatur, officia illo temporibus, veritatis officiis hic, minus ex quam quas praesentium labore.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="theme-switcher">
+        <input type="checkbox" id="switcher">
+        <label for="switcher">Switch</label>
+    </div>
+    
+    <script>
+        const input = document.querySelector(".theme-switcher input");
+
+
+        input.addEventListener("change", (e)=>{
+            if (e.target.checked){
+                document.body.setAttribute("data-theme", "dark");
+            }
+            else{
+                document.body.setAttribute("data-theme", "light");
+
+            }
+        })
+    </script>
+</body>
+</html>
